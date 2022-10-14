@@ -1,10 +1,11 @@
 import React from "react";
 
-const Menu = ({ items }) => {
+const Menu = ({ items, category }) => {
   return (
     <div className="section-center">
-      {items.map((items) => {
-        const { id, title, img, desc, price } = items;
+      {items.filter(item => category !== 'all' ? item.category === category : true
+      ).map((item) => {
+        const { id, title, img, desc, price } = item;
         return (
           <main key={id} className="menu-item">
             <img className="photo" src={img} alt={title} />
@@ -19,5 +20,6 @@ const Menu = ({ items }) => {
     </div>
   );
 };
+
 
 export default Menu;

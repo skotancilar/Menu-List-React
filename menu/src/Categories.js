@@ -1,25 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
+import classNames from 'classnames';
 
-const Categories = () => {
-  // const [Categories, setCategories] = useState;
-
-  // const handleCategories = (e) => {};
+const Categories = ({ setCategory, category }) => {
 
   return (
     <div className="btn-container">
-      <button onClick={handleCategories} className="filter-btn">
-        All
-      </button>
-      <button onlick={handleCategories} className="filter-btn">
+      {['all', 'breakfast', 'lunch', 'shakes'].map(c => (
+        <button key={c} onClick={() => setCategory(c)} className={classNames('filter-btn', { 'active': category === c })}>
+          {c}
+        </button>
+      ))
+      }
+
+      {/* <button onClick={() => setCategory('breakfast')} className="filter-btn">
         Breakfast
       </button>
-      <button onlick={handleCategories} className="filter-btn">
+      <button onClick={() => setCategory('lunch')} className="filter-btn">
         Lunch
       </button>
-      <button onlick={handleCategories} className="filter-btn">
+      <button onClick={() => setCategory('shakes')} className="filter-btn">
         Shakes
-      </button>
-    </div>
+      </button> */}
+    </div >
   );
 };
 

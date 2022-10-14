@@ -175,6 +175,12 @@ Menu
   transition: var(--transition);
   border-radius: var(--radius);
 }
+
+.active {
+  background: var(--clr-gold);
+  color: var(--clr-white);
+ }
+
 .filter-btn:hover {
   background: var(--clr-gold);
   color: var(--clr-white);
